@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta  charset= "UTF-8">
+        <title>Ты думаешь я шучу?</title>
+    </head>
+    <body>
+        <h2><a href = "table.html">Список самых больших животных</a></h2>
+        <p><a href="home.html">Самые большие животные</a></p>
+        <hr>
+
+        <details>
+            <summary><strong>График</strong></summary>
+            <form action="table.html">
+                <div class="options-container">
+                    <div class="options-column">
+                        <h4>Значение по оси OX</h4>
+                        <div class="option-item">
+                            <label><input type="radio" name="ox_value"> Тип</label>
+                        </div>
+                        <div class="option-item">
+                            <label><input type="radio" name="ox_value"> Среда обитания</label>
+                        </div>
+                        <div class="option-item">
+                            <label><input type="radio" name="ox_value"> Продолжительность жизни</label>
+                        </div>
+                    </div>
+                    
+                    <div class="options-column">
+                        <h4>Результат</h4>
+                        <div class="option-item">
+                            <label><input type="checkbox"> Максимальная высота или длина</label>
+                        </div>
+                        <div class="option-item">
+                            <label><input type="checkbox"> Минимальная высота или длина</label>
+                        </div>
+                        <div class="option-item">
+                            <label><input type="checkbox"> Максимальный вес</label>
+                        </div>
+                    </div>
+                </div>
+                <button>Построить</button>
+            </form><br>
+        </details>
+
+        <details>
+            <summary><strong>Фильтр</strong></summary>
+            <form action="table.html">
+                <p>
+                    <label>Название: <input type="text" placeholder="Синий кит"></label>
+                </p>
+
+                <p>
+                    <label>Тип: <select>
+                            <option value="Mammals">Млекопитающие</option>
+                            <option value="Bird">Птица</option>
+                            <option value="Fish">Рыба</option>
+                            <option value="Insect">Насекомое</option>
+                            <option value="Reptiles">Пресмыкающееся</option>
+                            <option value="Reptile">Рептилия</option>
+                            <option value="Amphibian">Амфибия</option>
+                            <option value="Crustacean">Ракообразное</option>
+                        </select>
+                    </label>
+                </p>
+
+                <p>
+                    <label>Среда обитания: <input type="text" placeholder="Африка"></label>
+                </p>
+                
+                <p>
+                    <label>Высота или длина (в метрах): от <input type="number"></label> <label> до <input type="number"></label>
+                </p>
+                
+                <p>
+                    <label>Продолжительность жизни: от <input type="number"></label> <label> до <input type="number"></label>
+                </p>
+                
+                <p>
+                    <label>Масса тела: от <input type="number"></label> <label> до <input type="number"></label>
+                </p>
+                <button>Найти</button>
+            </form><br>
+        </details>
+
+        <details>
+            <summary><strong>Сортировка</strong></summary>
+            <form action="table.html">
+            <p>Первый уровень: 
+                <select>
+                    <option value="nothing">Нет</option>
+                    <option value="height">По высоте</option>
+                    <option value="body_weight">По массе тела</option>
+                    <option value="life_expectancy">По продолжительности жизни</option>
+                </select>
+                по убыванию<input type="checkbox" name="flag_1">
+            </p>
+            <p>Второй уровень: 
+                <select>
+                    <option value="nothing">Нет</option>
+                    <option value="height">По высоте</option>
+                    <option value="body_weight">По массе тела</option>
+                    <option value="life_expectancy">По продолжительности жизни</option>
+                </select>
+                по убыванию<input type="checkbox" name="flag_2">
+            </p>
+            <p>Третий уровень: 
+                <select>
+                    <option value="nothing">Нет</option>
+                    <option value="height">По высоте</option>
+                    <option value="body_weight">По массе тела</option>
+                    <option value="life_expectancy">По продолжительности жизни</option>
+                </select>
+                по убыванию<input type="checkbox" name="flag_3">
+            </p>
+            </form>
+        </details><br>
+
+        <table border="5px" cellpadding="5px" cellspacing="0px">
+            <tr align="center" bgcolor="#D3D3D3">
+                <th>Название</th>
+                <th>Тип</th>
+                <th>Среда обитания</th>
+                <th>Высота</th>
+                <th>Масса тела</th>
+                <th>Продолжительность жизни</th>
+            </tr>
+
+            <tr><td>Синий кит</td><td>Млекопитающее</td><td>Океаны</td><td>30</td><td>180</td><td>80</td></tr>
+            <tr><td>Африканский слон</td><td>Млекопитающее</td><td>Африка</td><td>4</td><td>6</td><td>70</td></tr>
+            <tr><td>Жираф</td><td>Млекопитающее</td><td>Африка</td><td>5.5</td><td>1.2</td><td>25</td></tr>
+            <tr><td>Кашалот</td><td>Млекопитающее</td><td>Океаны</td><td>20</td><td>57</td><td>70</td></tr>
+            <tr><td>Белый медведь</td><td>Млекопитающее</td><td>Арктика</td><td>3</td><td>0.8</td><td>30</td></tr>
+            <tr><td>Бурый медведь</td><td>Млекопитающее</td><td>Европа, Азия, Америка</td><td>2.8</td><td>0.6</td><td>30</td></tr>
+            <tr><td>Нильский крокодил</td><td>Пресмыкающееся</td><td>Африка</td><td>6</td><td>1</td><td>70</td></tr>
+            <tr><td>Анаконда</td><td>Рептилия</td><td>Южная Америка</td><td>9</td><td>0.25</td><td>15</td></tr>
+            <tr><td>Гренландский кит</td><td>Млекопитающее</td><td>Северные моря</td><td>20</td><td>100</td><td>200</td></tr>
+            <tr><td>Альбатрос</td><td>Птица</td><td>Океаны</td><td>1.2</td><td>0.012</td><td>50</td></tr>
+            <tr><td>Орел белоголовый</td><td>Птица</td><td>Северная Америка</td><td>0.9</td><td>0.006</td><td>25</td></tr>
+            <tr><td>Страус</td><td>Птица</td><td>Африка</td><td>2.7</td><td>0.15</td><td>40</td></tr>
+            <tr><td>Кондор</td><td>Птица</td><td>Южная Америка</td><td>1.2</td><td>0.012</td><td>50</td></tr>
+            <tr><td>Капибара</td><td>Грызун</td><td>Южная Америка</td><td>1.3</td><td>0.05</td><td>12</td></tr>
+            <tr><td>Белуга</td><td>Рыба</td><td>Европа, Азия</td><td>5</td><td>1.5</td><td>100</td></tr>
+            <tr><td>Акула китовая</td><td>Рыба</td><td>Океаны</td><td>12</td><td>20</td><td>70</td></tr>
+            <tr><td>Белая акула</td><td>Рыба</td><td>Океаны</td><td>6</td><td>2.2</td><td>30</td></tr>
+            <tr><td>Манта</td><td>Рыба</td><td>Океаны</td><td>7</td><td>1.5</td><td>20</td></tr>
+            <tr><td>Осетр</td><td>Рыба</td><td>Реки Европы и Азии</td><td>6</td><td>1</td><td>50</td></tr>
+            <tr><td>Каракатица гигантская</td><td>Моллюск</td><td>Океаны</td><td>14</td><td>0.5</td><td>5</td></tr>
+            <tr><td>Кальмар гигантский</td><td>Моллюск</td><td>Океаны</td><td>13</td><td>0.6</td><td>5</td></tr>
+            <tr><td>Осьминог гигантский</td><td>Моллюск</td><td>Океаны</td><td>9</td><td>0.1</td><td>5</td></tr>
+            <tr><td>Муравей-пуля</td><td>Насекомое</td><td>Южная Америка</td><td>0.03</td><td>0.000001</td><td>2</td></tr>
+            <tr><td>Палочник гигантский</td><td>Насекомое</td><td>Азия</td><td>0.65</td><td>0.00002</td><td>1</td></tr>
+            <tr><td>Титан жук</td><td>Насекомое</td><td>Южная Америка</td><td>0.17</td><td>0.0001</td><td>2</td></tr>
+            <tr><td>Кузнечик гигантский</td><td>Насекомое</td><td>Океания</td><td>0.1</td><td>0.00005</td><td>1</td></tr>
+            <tr><td>Таракан Мадагаскарский</td><td>Насекомое</td><td>Мадагаскар</td><td>0.09</td><td>0.00002</td><td>2</td></tr>
+            <tr><td>Комодский варан</td><td>Рептилия</td><td>Индонезия</td><td>3</td><td>0.07</td><td>30</td></tr>
+            <tr><td>Игуана</td><td>Рептилия</td><td>Америка</td><td>2</td><td>0.005</td><td>20</td></tr>
+            <tr><td>Черепаха кожистая</td><td>Рептилия</td><td>Океаны</td><td>2.6</td><td>0.9</td><td>100</td></tr>
+            <tr><td>Галапагосская черепаха</td><td>Рептилия</td><td>Галапагосы</td><td>1.5</td><td>0.25</td><td>150</td></tr>
+            <tr><td>Саламандра гигантская</td><td>Амфибия</td><td>Китай</td><td>1.8</td><td>0.06</td><td>50</td></tr>
+            <tr><td>Лягушка-голиаф</td><td>Амфибия</td><td>Африка</td><td>0.3</td><td>0.003</td><td>15</td></tr>
+            <tr><td>Краб-паук японский</td><td>Ракообразное</td><td>Япония</td><td>3.7</td><td>0.02</td><td>50</td></tr>
+            <tr><td>Омар американский</td><td>Ракообразное</td><td>Атлантика</td><td>0.6</td><td>0.02</td><td>40</td></tr>
+            <tr><td>Креветка тигровая</td><td>Ракообразное</td><td>Индийский океан</td><td>0.3</td><td>0.002</td><td>6</td></tr>
+            <tr><td>Коала</td><td>Млекопитающее</td><td>Австралия</td><td>0.8</td><td>0.015</td><td>18</td></tr>
+            <tr><td>Кенгуру</td><td>Млекопитающее</td><td>Австралия</td><td>2</td><td>0.09</td><td>20</td></tr>
+            <tr><td>Панда</td><td>Млекопитающее</td><td>Китай</td><td>1.8</td><td>0.1</td><td>20</td></tr>
+            <tr><td>Тигр</td><td>Млекопитающее</td><td>Азия</td><td>3.3</td><td>0.3</td><td>20</td></tr>
+            <tr><td>Лев</td><td>Млекопитающее</td><td>Африка</td><td>2.8</td><td>0.25</td><td>20</td></tr>
+            <tr><td>Белый носорог</td><td>Млекопитающее</td><td>Африка</td><td>4</td><td>2.3</td><td>45</td></tr>
+            <tr><td>Гиппопотам</td><td>Млекопитающее</td><td>Африка</td><td>4.5</td><td>3.2</td><td>50</td></tr>
+            <tr><td>Лошадь</td><td>Млекопитающее</td><td>Весь мир</td><td>2.5</td><td>0.5</td><td>30</td></tr>
+            <tr><td>Коровa</td><td>Млекопитающее</td><td>Весь мир</td><td>2</td><td>0.6</td><td>20</td></tr>
+            <tr><td>Буйвол</td><td>Млекопитающее</td><td>Азия</td><td>3.5</td><td>1</td><td>25</td></tr>
+            <tr><td>Зубр</td><td>Млекопитающее</td><td>Европа</td><td>3.2</td><td>0.9</td><td>23</td></tr>
+            <tr><td>Окапи</td><td>Млекопитающее</td><td>Африка</td><td>2.5</td><td>0.3</td><td>20</td></tr>
+            <tr><td>Волк</td><td>Млекопитающее</td><td>Северное полушарие</td><td>1.6</td><td>0.06</td><td>15</td></tr>
+        </table>
+    </body>
+</html>
