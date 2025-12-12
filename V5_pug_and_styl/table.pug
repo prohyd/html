@@ -1,0 +1,151 @@
+//- animals-table.pug
+extends layout.pug
+
+block content
+
+  //- Животные
+  - const animals = []
+  - animals.push({name:"Синий кит", type:"Млекопитающее", habitat:"Океаны", height:30, weight:180, life:80})
+  - animals.push({name:"Африканский слон", type:"Млекопитающее", habitat:"Африка", height:4, weight:6, life:70})
+  - animals.push({name:"Жираф", type:"Млекопитающее", habitat:"Африка", height:5.5, weight:1.2, life:25})
+  - animals.push({name:"Кашалот", type:"Млекопитающее", habitat:"Океаны", height:20, weight:57, life:70})
+  - animals.push({name:"Белый медведь", type:"Млекопитающее", habitat:"Арктика", height:3, weight:0.8, life:30})
+  - animals.push({name:"Бурый медведь", type:"Млекопитающее", habitat:"Европа, Азия, Америка", height:2.8, weight:0.6, life:30})
+  - animals.push({name:"Нильский крокодил", type:"Пресмыкающееся", habitat:"Африка", height:6, weight:1, life:70})
+  - animals.push({name:"Анаконда", type:"Рептилия", habitat:"Южная Америка", height:9, weight:0.25, life:15})
+  - animals.push({name:"Гренландский кит", type:"Млекопитающее", habitat:"Северные моря", height:20, weight:100, life:200})
+  - animals.push({name:"Альбатрос", type:"Птица", habitat:"Океаны", height:1.2, weight:0.012, life:50})
+  - animals.push({name:"Комодский варан", type:"Рептилия", habitat:"Индонезия", height:3, weight:0.07, life:30})
+  - animals.push({name:"Коала", type:"Млекопитающее", habitat:"Австралия", height:0.8, weight:0.015, life:18})
+  - animals.push({name:"Тигр", type:"Млекопитающее", habitat:"Азия", height:3.3, weight:0.3, life:20})
+  - animals.push({name:"Лев", type:"Млекопитающее", habitat:"Африка", height:2.8, weight:0.25, life:20})
+
+  //- Список категорий
+  - const animalTypes = []
+  - animalTypes.push("Млекопитающие")
+  - animalTypes.push("Птица")
+  - animalTypes.push("Рыба")
+  - animalTypes.push("Насекомое")
+  - animalTypes.push("Пресмыкающееся")
+  - animalTypes.push("Рептилия")
+  - animalTypes.push("Амфибия")
+  - animalTypes.push("Ракообразное")
+
+  //- Список сортировок
+  - const sortList = []
+  - sortList.push({value:"nothing", label:"Нет"})
+  - sortList.push({value:"height", label:"По высоте"})
+  - sortList.push({value:"body_weight", label:"По массе тела"})
+  - sortList.push({value:"life_expectancy", label:"По продолжительности жизни"})
+
+  // Радио-кнопка
+  mixin radio(name, label)
+    .option-item
+      label
+        input(type="radio", name=name)
+        | #{label}
+
+  // Чекбокс
+  mixin check(label)
+    .option-item
+      label
+        input(type="checkbox")
+        | #{label}
+
+  // Селект сортировки
+  mixin sortSelect(level)
+    p #{level} уровень:
+      select
+        each item in sortList
+          option(value=item.value)= item.label
+      |  по убыванию
+      input(type="checkbox", name="flag_"+level)
+
+
+  h2
+    a(href="home5.html") На главную страницу
+  hr
+
+  details
+    summary 
+      strong График
+
+    form(action="table.html")
+      .options-container
+
+        .options-column
+          h4 Значение по оси OX
+          +radio("ox","Тип")
+          +radio("ox","Среда обитания")
+          +radio("ox","Продолжительность жизни")
+
+        .options-column
+          h4 Результат
+          +check("Максимальная высота или длина")
+          +check("Минимальная высота или длина")
+          +check("Максимальный вес")
+
+      button Построить
+
+  details
+    summary 
+      strong Фильтр
+
+    form(action="table.html")
+
+      p
+        label Название:
+          input(type="text", placeholder="Синий кит")
+
+      p
+        label Тип:
+          select
+            each type in animalTypes
+              option(value=type)= type
+
+      p
+        label Среда обитания:
+          input(type="text", placeholder="Африка")
+
+      p 
+        label Высота (м): от
+          input(type="number")
+        label до
+          input(type="number")
+
+      p 
+        label Продолжительность жизни: от
+          input(type="number")
+        label до
+          input(type="number")
+
+      p 
+        label Масса тела: от
+          input(type="number")
+        label до
+          input(type="number")
+
+      button Найти
+
+  details
+    summary 
+      strong Сортировка
+
+    form(action="table.html")
+      +sortSelect("1")
+      +sortSelect("2")
+      +sortSelect("3")
+
+  table(border="5", cellpadding="5", cellspacing="0")
+    tr(align="center", bgcolor="#D3D3D3")
+      each col in ["Название","Тип","Среда обитания","Высота","Масса тела","Продолжительность жизни"]
+        th= col
+
+    each a in animals
+      tr
+        td= a.name
+        td= a.type
+        td= a.habitat
+        td= a.height
+        td= a.weight
+        td= a.life

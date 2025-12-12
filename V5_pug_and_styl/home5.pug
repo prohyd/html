@@ -1,0 +1,80 @@
+//- index.pug
+extends layout.pug
+
+block content
+
+  // ==================== МЕНЮ ====================
+  nav.menu
+    .menu__item.menu__item--main 
+      a(href = "table.html") Животные
+    .menu__item.menu__item--highlight Млекопитающие
+    .menu__item Амфибии
+    .menu__item Птицы
+    .menu__item Рептилии
+
+  // ==================== ГАЛЕРЕЯ ====================
+  .gallery
+    a(href="img1.html").gallery__big
+      img(src="https://cdn.nur.kz/images/720/82c494d2b4318501.webp", alt="Картинка слона")
+    .gallery__big
+      img(src="https://cdn.nur.kz/images/720/cecb1d96b6bca468.webp", alt="Картинка носорога")
+    .gallery__col-small
+      .gallery__small
+        img(src="https://cdn.nur.kz/images/720/3669fede72ff9b27.webp", alt="Картинка бегемота")
+      .gallery__small
+        img(src="https://cdn.nur.kz/images/720/1a1186feac6c5e0c.webp", alt="Картинка крокодила")
+
+  // ==================== КРУГЛЫЕ КАРТОЧКИ ====================
+  .cards
+    each item in [ {img: "https://cdn.nur.kz/images/1120/a4d024858481c90b.webp", title: "Синий кит"}, {img: "https://cdn.nur.kz/images/1120/ecf450a817936963.webp", title: "Китовая акула"}, {img: "https://cdn.nur.kz/images/1120/7572a2aac3607dfc.webp", title: "Косатка"} ]
+      .cards__item
+        .cards__image
+          img(src=item.img, alt=item.title)
+        h3.cards__title= item.title
+        button.cards__button Подробнее»
+
+  // ==================== ТРЁХКОЛОНОЧНАЯ СЕКЦИЯ ====================
+  .info-cards
+
+    // ----- ЛЕВАЯ КОЛОНКА -----
+    .info-cards__column.info-cards__column--left
+      .info-card
+        .info-card__image
+          img(src="https://i.pinimg.com/736x/e5/82/41/e582414eb6eacec285ae6112e7b2cb02.jpg", alt="Картинка кошки")
+        .info-card__content
+          h3.info-card__title Млекопитающие
+          p.info-card__text Млекопитающие представляют собой класс, который характеризуется рядом уникальных особенностей. Они обладают молочными железами, что позволяет им кормить своих детенышей.
+          a.info-card__link(href="#") Подробнее»
+
+      .info-card
+        .info-card__image
+          img(src="https://avatars.mds.yandex.net/i?id=7022effc5250a94767917fc2c5ad3f35aa3df6a6-4897119-images-thumbs&n=13", alt="Картинка воробья")
+        .info-card__content
+          h3.info-card__title Птицы
+          p.info-card__text Птицы — это группа позвоночных, наиболее известная способностью к полёту. Они имеют перья, клюв и лёгкий скелет.
+          a.info-card__link(href="#") Подробнее»
+
+    // ----- ЦЕНТР -----
+    .info-cards__column.info-cards__column--center
+      .info-card.info-card--center
+        h3.info-card__title Животные
+        p.info-card__text Животные — многоклеточные организмы, которые питаются органическими веществами и выполняют важные функции в экосистемах.
+        a.info-card__link(href="#") Подробнее»
+
+    // ----- ПРАВАЯ КОЛОНКА -----
+    .info-cards__column.info-cards__column--right
+      .info-card.info-card--reverse
+        .info-card__image
+          img(src="https://wallpapers.com/images/hd/green-leopard-collared-lizard-op6t6r8p6fuxjkso.jpg", alt="Картинка ящерицы")
+        .info-card__content
+          h3.info-card__title Рептилии
+          p.info-card__text Рептилии — это холоднокровные позвоночные, характеризующиеся чешуйчатой кожей и внутренним оплодотворением.
+          a.info-card__link(href="#") Подробнее»
+
+      .info-card.info-card--reverse
+        .info-card__image
+          img(src="https://i.pinimg.com/736x/09/ec/b2/09ecb2d8e153431aad2da42babf0f571.jpg", alt="Картинка аксолотля")
+        .info-card__content
+          h3.info-card__title Амфибии
+          p.info-card__text Амфибии — это группа позвоночных, которые имеют двоякую жизнь: они начинают свой жизненный цикл в воде в виде личинок, а затем переходят к взрослой стадии на суше.
+          a.info-card__link(href="#") Подробнее»
