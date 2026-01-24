@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Калькулятор комплексного числа</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Калькулятор операций с комплексным числом</h1>
+
+    <div class="image-box">
+      <img id="formImage" src="alg.png" alt="Форма комплексного числа">
+    </div>
+
+    <fieldset class="form-row">
+      <legend>Форма задания числа</legend>
+      <label><input type="radio" name="form" value="algebraic" id="radioAlg" checked> Алгебраическая</label>
+      <label><input type="radio" name="form" value="exponential" id="radioExp"> Показательная</label>
+      <button id="btnShow" type="button">Показать</button>
+    </fieldset>
+
+    <form id="calcForm" novalidate>
+      <div class="inputs">
+        <!-- labels / inputs будут обновлены JS -->
+        <p>
+          <label id="label1">Re(z) = 
+            <input type="text" id="input1" placeholder="например, 1.5">
+          </label>
+        </p>
+        <p>
+          <label id="label2">Im(z) = 
+            <input type="text" id="input2" placeholder="например, -2">
+          </label>
+        </p>
+      </div>
+
+      <fieldset class="ops">
+        <legend id="findLabel">Найти:</legend>
+        <label><input type="checkbox" id="opArg"> Аргумент (φ)</label>
+        <label><input type="checkbox" id="opIm"> Мнимая часть (Im)</label>
+        <label><input type="checkbox" id="opMod"> Модуль (|z|)</label>
+        <label><input type="checkbox" id="opOther"> Представления (другие формы)</label>
+      </fieldset>
+
+      <p class="buttons">
+        <button id="btnCalc" type="button">Вычислить</button>
+        <button id="btnClear" type="button">Очистить</button>
+      </p>
+    </form>
+
+    <div id="result" aria-live="polite"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -82,4 +82,3 @@ for (let i = 0; i < keys.length; i++) {
   }
   console.log("--------------------");
 }
-console.log(xorBits(charToBits('и'),charToBits('к')));
