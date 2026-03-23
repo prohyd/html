@@ -1,0 +1,44 @@
+body {
+    font-family: "Times New Roman", serif;
+    background: white;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    min-width: 700px;
+}
+
+/* границы */
+th, td {
+    border: 1px solid #cfcfcf;
+    padding: 6px 10px;
+}
+
+/* шапка */
+th {
+    background: #d9d9d9;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* строки таблицы */
+tbody tr {
+    background: #f2f2f2;
+}
+
+/* чередование строк */
+tbody tr:nth-child(even) {
+    background: #e8e8e8;
+}
+
+/* выравнивание текста */
+td {
+    text-align: left;
+}
+
+/* числа справа */
+td:last-child,
+td:nth-last-child(2) {
+    text-align: right;
+}
