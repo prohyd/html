@@ -1,0 +1,33 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    padding-top: 10px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px;
+}
+
+#setting {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    gap: 20px;
+}
+
+#setting label {
+    margin: 0;
+}
+
+svg {
+    margin: 5px;
+    border: thin solid black;
+}
