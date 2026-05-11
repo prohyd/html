@@ -1,0 +1,21 @@
+import TableRow from './TableRow.jsx';
+
+const TableBody = (props) => {
+  const begRange = (Number(props.numPage) - 1) * props.amountRows;
+  const endRange = begRange + Number(props.amountRows);
+
+  const tbody = props.body.map((item, index) =>
+    <tr key={index} hidden={
+    (index >= begRange && index < endRange) ? false : true}>
+      <TableRow row={ Object.values(item) } isHead="0"/>
+    </tr>
+  )
+
+  return (
+    <tbody>
+      { tbody }
+    </tbody>
+  )
+}
+
+export default TableBody
