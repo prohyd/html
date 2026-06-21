@@ -1,0 +1,50 @@
+.building {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.building__title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.building__image {
+    display: block;
+    width: 300px;
+    height: auto;
+    margin: 0 auto 30px;
+}
+
+.building__description {
+    column-count: 2;
+    column-gap: 40px;
+}
+
+.building__description p {
+    margin: 0 0 16px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .building {
+        padding: 15px;
+    }
+
+    .building__title {
+        font-size: 24px;
+    }
+
+    .building__image {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .building__description {
+        column-count: 1;
+    }
+}
